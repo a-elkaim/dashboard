@@ -32,6 +32,7 @@ import {
   MessageSquareShareIcon,
   NetworkIcon,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import NetworkRoutesIcon from "@/assets/icons/NetworkRoutesIcon";
@@ -77,6 +78,8 @@ function ControlCenterView() {
   const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const reactFlow = useReactFlow();
+  const { resolvedTheme } = useTheme();
+  const isLight = resolvedTheme === "light";
   const [layoutInitialized, setLayoutInitialized] = useState(false);
   const [forceLayoutChange, setForceLayoutChange] = useState(false);
   const { loggedInUser } = useLoggedInUser();
@@ -1867,9 +1870,13 @@ function ControlCenterView() {
             fitView={false}
             maxZoom={DEFAULT_MAX_ZOOM}
             minZoom={DEFAULT_MIN_ZOOM}
-            colorMode={"dark"}
+            colorMode={isLight ? "light" : "dark"}
           >
-            <Background bgColor={"#181a1d"} gap={20} color={"#717171"} />
+            <Background
+              bgColor={isLight ? "#f8fafb" : "#181a1d"}
+              gap={20}
+              color={isLight ? "#9aa5ad" : "#717171"}
+            />
           </ReactFlow>
         </PeersProvider>
       </div>
