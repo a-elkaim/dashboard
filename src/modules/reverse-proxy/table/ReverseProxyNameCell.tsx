@@ -64,7 +64,7 @@ export default function ReverseProxyNameCell({
             isEnabled ? "text-green-500" : "text-nb-gray-400",
           )}
         />
-        <div className="flex flex-col gap-0 dark:text-neutral-300 text-neutral-500 truncate">
+        <div className="flex flex-col gap-0 text-nb-gray-300 truncate">
           <div className="flex items-center gap-2">
             {displayDomain && isLinkable ? (
               <ExternalLinkText href={`https://${displayDomain}${portSuffix}`}>
