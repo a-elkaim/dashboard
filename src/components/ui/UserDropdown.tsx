@@ -9,6 +9,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@components/DropdownMenu";
+import DarkModeToggle from "@components/ui/DarkModeToggle";
 import TextWithTooltip from "@components/ui/TextWithTooltip";
 import { UserAvatar } from "@components/ui/UserAvatar";
 import { KeyRound, LogOutIcon, User2 } from "lucide-react";
@@ -108,6 +109,10 @@ export default function UserDropdown() {
           </div>
           <DropdownMenuShortcut>{isMac ? "⇧⌘L" : "⇧ ⊞ L"}</DropdownMenuShortcut>
         </DropdownMenuItem>
+
+        <DropdownMenuSeparator />
+
+        <DarkModeToggle />
       </DropdownMenuContent>
     </DropdownMenu>
     </>

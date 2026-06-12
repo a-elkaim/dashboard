@@ -12,7 +12,6 @@ import { useAnnouncement } from "@/contexts/AnnouncementProvider";
 import { useApplicationContext } from "@/contexts/ApplicationProvider";
 import { usePermissions } from "@/contexts/PermissionsProvider";
 import HelpAndSupportButton from "@components/ui/HelpAndSupportButton";
-import DarkModeToggle from "@components/ui/DarkModeToggle";
 
 export const headerHeight = 65;
 
@@ -65,7 +64,6 @@ export default function NavbarWithDropdown() {
           </div>
 
           <div className="flex md:order-2 gap-5 items-center">
-            <DarkModeToggle />
             <HelpAndSupportButton />
             <UserDropdown />
           </div>
